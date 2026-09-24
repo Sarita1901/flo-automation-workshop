@@ -1,0 +1,17 @@
+{
+  "name": "flo-yammer-automation",
+  "version": "1.0.0",
+  "description": "Playwright + TypeScript automation for Yammer / Viva Engage (FLO 2026)",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:draft": "playwright test tests/save-draft.spec.ts --headed",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen https://engage.cloud.microsoft/main/feed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.0",
+    "@types/node": "^20.11.0",
+    "typescript": "^5.4.0"
+  }
+}
