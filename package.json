@@ -1,0 +1,14 @@
+{
+  "name": "simple-task-manager",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Workshop demo: Simple Task Manager (vanilla HTML/CSS/JS) with Playwright automation",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.0",
+    "http-server": "^14.1.1",
+    "typescript": "^5.6.0"
+  }
+}

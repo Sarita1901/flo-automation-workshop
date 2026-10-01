@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>Task Manager</h1>
+
+    <form id="taskForm" novalidate>
+      <label for="taskInput">New task</label>
+      <div class="input-row">
+        <input type="text" id="taskInput" name="taskInput" placeholder="Enter a task" autocomplete="off" />
+        <button type="submit" id="addTaskBtn">Add Task</button>
+      </div>
+      <p id="errorMessage" class="error-message" role="alert" hidden>
+        Task cannot be empty. Please enter a task.
+      </p>
+    </form>
+
+    <p id="taskCounter" class="task-counter" aria-live="polite">0 incomplete tasks</p>
+
+    <ul id="taskList" class="task-list" aria-label="Task list"></ul>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
