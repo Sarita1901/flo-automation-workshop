@@ -40,9 +40,20 @@ pipeline {
 
     post {
         always {
-            // Always archive the HTML report, whether tests passed or failed,
-            // so it's downloadable/viewable from the Jenkins build page.
-            archiveArtifacts artifacts: 'playwright-report/**',
+            // Build the plain static summary.html from the JSON results
+            // (skipped safely if results.json doesn't exist, e.g. an earlier
+            // stage failed before tests ran).
+            bat '''
+                if exist test-results\\results.json (
+                    npm run report:summary
+                ) else (
+                    echo No results.json found, skipping summary report.
+                )
+            '''
+
+            // Always archive the reports, whether tests passed or failed,
+            // so they're downloadable/viewable from the Jenkins build page.
+            archiveArtifacts artifacts: 'playwright-report/**, test-results/summary.html',
                               allowEmptyArchive: true,
                               fingerprint: true
         }

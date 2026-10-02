@@ -4,7 +4,8 @@
   "private": true,
   "description": "Workshop demo: Simple Task Manager (vanilla HTML/CSS/JS) with Playwright automation",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test",
+    "report:summary": "node scripts/generate-summary-report.js"
   },
   "devDependencies": {
     "@playwright/test": "1.62.0",
