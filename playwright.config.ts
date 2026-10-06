@@ -19,6 +19,8 @@ export default defineConfig({
   use: {
     baseURL: BASE_URL,
     trace: 'on-first-retry',
+    // Slow each action down so it's visible when watching. Override with SLOW_MO=0 (e.g. in CI).
+    launchOptions: { slowMo: Number(process.env.SLOW_MO ?? 800) },
   },
 
   projects: [
